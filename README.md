@@ -17,20 +17,22 @@ This repository contains a Verilog implementation and testbench for a **Synchron
 
 ---
 
-## Port Descriptions
+### Interface Ports and Registers
 
-| Port Name | Direction | Data Type | Width | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| `clk` | Input | `wire` | 1 bit | System clock (shared by write and read logic). |
-| `rst_n` | Input | `wire` | 1 bit | Asynchronous active-low hardware reset. |
-| `full` | Input | `wire` | 1 bit | Status flag indicating the FIFO is full. |
-| `empty` | Input | `wire` | 1 bit | Status flag indicating the FIFO is empty. |
-| `wr_en` | Input | `wire` | 1 bit | Write enable pulse from producer logic. |
-| `rd_en` | Input | `wire` | 1 bit | Read enable pulse from consumer logic. |
-| `sw_clr_err` | Input | `wire` | 1 bit | Software clear signal to reset the latched `sticky_error`. |
-| `overflow_err` | Output | `wire` | 1 bit | Combinational/transient overflow pulse (active high). |
-| `underflow_err` | Output | `wire` | 1 bit | Combinational/transient underflow pulse (active high). |
-| `sticky_error` | Output | `reg` | 1 bit | Latched error flag; remains `1` after an error until cleared. |
+#### Top-Level Ports
+
+| Port Name | Direction | Width | Description |
+| :--- | :--- | :--- | :--- |
+| `clk` | Input | 1 bit | System Clock |
+| `rst_n` | Input | 1 bit | Active-Low Asynchronous Hardware Reset |
+| `full` | Input | 1 bit | FIFO Full status flag |
+| `empty` | Input | 1 bit | FIFO Empty status flag |
+| `wr_en` | Input | 1 bit | Write Enable control signal |
+| `rd_en` | Input | 1 bit | Read Enable control signal |
+| `sw_clr_err` | Input | 1 bit | Software Clear signal (resets sticky bit) |
+| `overflow_err` | Output | 1 bit | Current/transient overflow pulse |
+| `underflow_err` | Output | 1 bit | Current/transient underflow pulse |
+| `sticky_error` | Output | 1 bit | Latched error flag indicating an overflow/underflow occurred |
 
 ---
 
