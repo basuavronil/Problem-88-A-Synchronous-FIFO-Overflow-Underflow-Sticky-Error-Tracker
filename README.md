@@ -1,4 +1,4 @@
-# Problem-88.-FIFO-Overflow-Underflow-Sticky-Error-Tracker
+# Problem-88.1-FIFO-Overflow-Underflow-Sticky-Error-Tracker
 # FIFO Overflow/Underflow Sticky Error Tracker
 
 This repository contains a Verilog implementation and testbench for a **Synchronous FIFO Overflow/Underflow Sticky Error Tracker**.
