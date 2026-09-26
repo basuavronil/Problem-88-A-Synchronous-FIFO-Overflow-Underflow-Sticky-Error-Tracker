@@ -34,6 +34,14 @@ module tb_fifo_error_tracker;
     always #5 clk = ~clk;
 
     initial begin
+        // Waveform dumping setup for GTKWave / ModelSim
+        $dumpfile("fifo_error_tracker.vcd");
+        $dumpvars(0, tb_fifo_error_tracker);
+
+        // Real-time console monitor
+        $monitor("Time=%0tns | rst_n=%b | wr_en=%b full=%b ovf=%b | rd_en=%b empty=%b unf=%b | sw_clr=%b | sticky_err=%b",
+                 $time, rst_n, wr_en, full, overflow_err, rd_en, empty, underflow_err, sw_clr_err, sticky_error);
+
         // Initialize Inputs
         clk        = 0;
         rst_n      = 0;
