@@ -36,3 +36,10 @@ This repository contains a Verilog implementation and testbench for a **Synchron
 
 ---
 
+## Output 
+### Waveform
+<img width="959" height="299" alt="image" src="https://github.com/user-attachments/assets/aec771f3-77ae-4361-914f-f16b37564bd6" />
+
+### Simulation Terminals 
+<img width="818" height="169" alt="image" src="https://github.com/user-attachments/assets/c1a8c7f4-08e0-46f1-b691-a3a210667b75" />
+
